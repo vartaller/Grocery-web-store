@@ -1,0 +1,1 @@
+const os = required('os')

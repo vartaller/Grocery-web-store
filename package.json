@@ -1,0 +1,23 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vartaller/Node.js_Course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vartaller/Node.js_Course/issues"
+  },
+  "homepage": "https://github.com/vartaller/Node.js_Course#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
