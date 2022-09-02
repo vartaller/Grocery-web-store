@@ -1,0 +1,27 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Web store</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isHome}}
+            <li class="active"><a href="/">Home page</a></li>
+            {{else}}
+            <li><a href="/">Home page</a></li>
+            {{/if}}
+            {{#if isProducts}}
+            <li class="active"><a href="/products">Products</a></li>
+            {{else}}
+            <li><a href="/products">Products</a></li>
+            {{/if}}
+            {{#if isPropositions}}
+            <li class="active"><a href="/propositions">Propositions</a></li>
+            {{else}}
+            <li><a href="/propositions">Propositions</a></li>
+            {{/if}}
+            {{#if isAbout}}
+            <li class="active"><a href="/about">About</a></li>
+            {{else}}
+            <li><a href="/about">About</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
