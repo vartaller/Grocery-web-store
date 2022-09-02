@@ -3,4 +3,4 @@
 - Simple server
 - Web store
 
-Technologies: Node.js, Express, Handlebars
+Technologies: JavaScript, HTML, CSS, Node.js, Express, Handlebars
