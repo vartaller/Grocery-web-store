@@ -1,6 +1,10 @@
 const express = require('express')
 // const path = require('path')
 const exphbs = require('express-handlebars')
+const homeRoutes = require('./routes/home')
+const aboutRoutes = require('./routes/about')
+const productsRoutes = require('./routes/products')
+const addRoutes = require('./routes/add')
 
 const app = express()
 
@@ -15,35 +19,12 @@ app.set('views', 'views') //set html folder
 
 
 app.use(express.static("public")) //register the public folder
+app.use(express.urlencoded({extended: true}))
 
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: "Home page",
-        isHome: true
-    })
-    // res.sendFile(path.join(__dirname, 'views', 'index.html'))
-})
-
-app.get('/products', (req, res) => {
-    res.render('products', {
-        title: "Products",
-        isProducts: true
-    })
-})
-
-app.get('/propositions', (req, res) => {
-    res.render('propositions', {
-        title: "Propositions",
-        isPropositions: true
-    })
-})
-
-app.get('/about', (req, res) => {
-    res.render('about', {
-        title: "About",
-        isAbout: true
-    })
-})
+app.use("/", homeRoutes)
+app.use('/about', aboutRoutes)
+app.use('/products', productsRoutes)
+app.use('/add', addRoutes)
 
 const PORT = process.env.PORT || 3000
 
