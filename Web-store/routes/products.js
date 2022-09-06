@@ -11,4 +11,13 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.get('/:id', async (req, res) => {
+    const product = await Product.getById(req.params.id)
+    res.render('product', {
+        layout: 'empty',
+        title: `${product.title}`,
+        product
+    })
+})
+
 module.exports = router
