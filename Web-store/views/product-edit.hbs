@@ -1,0 +1,25 @@
+<h1>Edit product {{product.title}}</h1>
+
+<form action="/products/edit" method="POST">
+  <div class="input-field">
+    <input id="title" name="title" type="text" class="validate" required value="{{product.title}}">
+    <label for="title">Product name</label>
+    <span class="helper-text" data-error="Type product name"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="price" name="price" type="number" class="validate" min="1" required value="{{product.price}}">
+    <label for="price">Price</label>
+    <span class="helper-text" data-error="Type number"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="img" name="img" type="text" class="validate" required value="{{product.img}}">
+    <label for="img">Image url</label>
+    <span class="helper-text" data-error="Type image url"></span>
+  </div>
+
+  <input type="hidden" name="id" value="{{product.id}}">
+
+  <button class="btn btn-primary">Update product</button>
+</form>

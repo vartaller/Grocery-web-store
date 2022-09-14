@@ -1,6 +1,7 @@
 const { v4: uuid } = require('uuid');
 const fs = require('fs');
 const path = require('path');
+const { countReset } = require('console');
 
 class Product {
     constructor(title, price, img) {
@@ -17,6 +18,27 @@ class Product {
             img: this.img,
             id: this.id
         }
+    }
+
+    static async update(product) {
+        const products = await Product.getAll()
+
+        const idx = products.findIndex(p => p.id === product.id)
+        products[idx] = product
+
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                path.join(__dirname, '..', 'data', 'products.json'),
+                JSON.stringify(products),
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                    }
+                }
+            )
+        })
     }
 
     async save() {
